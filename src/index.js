@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { movies } from "./helpers/database";
 // CSS
-import "./index.css";
-import SpecificMovie from "./ui/components/Movie";
+import "./index.scss";
+import Movie from "./ui/components/Movie";
 
 function MovieList() {
   return (
-    <section className="movielist">
+    <section className="movieList">
       {movies.map((movie, index) => {
-        return <SpecificMovie key={movie.id} {...movie}></SpecificMovie>;
+        return <Movie key={movie.id} {...movie}></Movie>;
       })}
     </section>
   );

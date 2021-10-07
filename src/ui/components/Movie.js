@@ -14,13 +14,15 @@ const Movie = ({
   return (
     <article className="movie">
       <img src={posterUrl} alt="Poster" />
-      <h1>
-        {title} ({year})
-      </h1>
-      <h4>{rating} ⭐</h4>
-      <h3>{genres + " " + duration + " minutes"}</h3>
-      <p>{description}</p>
-      <h4>{tags}</h4>
+      <div className="movie__info">
+        <h1>
+          {title} ({year})
+        </h1>
+        <h4>{rating} ⭐</h4>
+        <h3>{genres.join(", ") + " " + duration + " minutes"}</h3>
+        <p>{description}</p>
+        <h4>{tags.join(", ")}</h4>
+      </div>
     </article>
   );
 };
