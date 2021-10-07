@@ -4,8 +4,18 @@ import { movies } from "./helpers/database";
 // CSS
 import "./index.scss";
 import Movie from "./ui/components/Movie";
+import Search from "./ui/components/SearchBar";
 
-function MovieList() {
+const App = () => {
+  return (
+    <div>
+      <SearchBar />
+      <MovieList />
+    </div>
+  );
+};
+
+const MovieList = () => {
   return (
     <section className="movieList">
       {movies.map((movie, index) => {
@@ -13,6 +23,14 @@ function MovieList() {
       })}
     </section>
   );
-}
+};
 
-ReactDOM.render(<MovieList />, document.getElementById("root"));
+const SearchBar = () => {
+  return (
+    <div>
+      <Search />
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById("root"));
