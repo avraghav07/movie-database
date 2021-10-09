@@ -1,16 +1,20 @@
-const Search = () => (
-  <form action="/" method="get">
-    <label htmlFor="header-search">
-      <span className="search"></span>
-    </label>
-    <input
-      type="text"
-      id="header-search"
-      placeholder="Search for movies by name"
-      name="s"
-    />
-    <button type="submit">Search</button>
-  </form>
-);
+const SearchBar = ({ searchString, setSearchString }) => {
+  return (
+    <div className="search">
+      <input
+        className="search__bar"
+        type="text"
+        placeholder="🔎 Search for movies by name"
+        value={searchString}
+        onChange={(e) => {
+          setSearchString(e.target.value);
+        }}
+      />
+      <button type="submit" className="search__button">
+        Filters
+      </button>
+    </div>
+  );
+};
 
-export default Search;
+export default SearchBar;
