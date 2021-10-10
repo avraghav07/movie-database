@@ -1,7 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const movies = require("./movies");
 
 const router = express.Router();
+
+router.use(cors());
 
 router.get("/movies", movies.get);
 
