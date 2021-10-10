@@ -1,15 +1,8 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 
 const Movie = ({ id, title, year, genres, rating, tags }) => {
-  const history = useHistory();
   return (
-    <div
-      className="container"
-      onClick={() => {
-        history.push(`/movies/${id}`);
-      }}
-    >
+    <div className="container">
       <article className="movie">
         <h1>
           {title} ({year})

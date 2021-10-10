@@ -1,6 +1,4 @@
 import React, { Fragment, useState } from "react";
-import { movies } from "./helpers/database";
-// CSS
 import "./index.scss";
 import Movie from "./ui/components/Movie";
 import SearchBar from "./ui/components/SearchBar";

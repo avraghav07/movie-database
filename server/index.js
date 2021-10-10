@@ -1,9 +1,15 @@
 const express = require("express");
-
-const PORT = process.env.PORT || 3001;
+const path = require("path");
+const api = require("./modules/api");
 
 const app = express();
 
-app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
-});
+app.use("/api", api.router);
+
+app.use(
+  express.static(path.join(__dirname, "..", "build"), {
+    maxAge: 24 * 60 * 60 * 1000,
+  })
+);
+
+app.listen(process.env.PORT || 4000);
